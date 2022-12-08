@@ -26,6 +26,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.31'
+
 
 }
 

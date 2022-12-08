@@ -1,0 +1,18 @@
+server:
+  // EB는 기본적으로 앱이 5000 port를 사용한다고 생각한다.
+  // 여기서 5000포트에서 실행하도록 설정해 줬다.
+  port: 5000
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    // Dialect란 자바의 데이터형과 데이터베이스의 데이터형을 매핑해 주는 라이브러리다
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      // 없는 테이블은 새로 만들고 수정된 테이블은 업데이트
+      ddl-auto: update
+  datasource:
+    // 일라스틱 빈스톡이 만들어준다. 변수를 대입할 수 있다
+    url: jdbc:mysql://${rds.hostname}:${rds.port}/${rds.db.name}
+    username: ${rds.username}
+    password: ${rds.password}
